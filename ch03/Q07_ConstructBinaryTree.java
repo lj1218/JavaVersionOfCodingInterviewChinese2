@@ -199,27 +199,27 @@ public class Q07_ConstructBinaryTree {
 
 class Node<E> {
     private E value;
-    private Node lChild;
-    private Node rChild;
+    private Node<E> lChild;
+    private Node<E> rChild;
 
     public Node(E value) {
         this.value = value;
         lChild = rChild = null;
     }
 
-    public void setLChild(Node node) {
+    public void setLChild(Node<E> node) {
         lChild = node;
     }
 
-    public void setRChild(Node node) {
+    public void setRChild(Node<E> node) {
         rChild = node;
     }
 
-    public Node getLChild() {
+    public Node<E> getLChild() {
         return lChild;
     }
 
-    public Node getRChild() {
+    public Node<E> getRChild() {
         return rChild;
     }
 
@@ -243,7 +243,7 @@ class BinaryTree<E> {
         System.out.println();
     }
 
-    private void printPreOrder0(Node root) {
+    private void printPreOrder0(Node<E> root) {
         if (root == null) {
             return;
         }
@@ -266,7 +266,7 @@ class BinaryTree<E> {
         System.out.println();
     }
 
-    private void printInOrder0(Node root) {
+    private void printInOrder0(Node<E> root) {
         if (root == null) {
             return;
         }
