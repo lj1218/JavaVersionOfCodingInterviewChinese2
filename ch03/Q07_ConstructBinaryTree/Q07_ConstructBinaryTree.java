@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03;
+package CodingInterviewChinese2.ch03.Q07_ConstructBinaryTree;
 
 import java.util.Arrays;
 

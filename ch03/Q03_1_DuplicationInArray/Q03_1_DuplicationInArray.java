@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03;
+package CodingInterviewChinese2.ch03.Q03_1_DuplicationInArray;
 
 import CodingInterviewChinese2.Util;
 

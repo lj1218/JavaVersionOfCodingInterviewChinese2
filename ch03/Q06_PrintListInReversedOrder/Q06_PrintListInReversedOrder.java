@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03;
+package CodingInterviewChinese2.ch03.Q06_PrintListInReversedOrder;
 
 import java.util.Stack;
 
@@ -12,6 +12,7 @@ import java.util.Stack;
  * 提示：循环放入栈再依次弹出打印 或者 递归打印（链表长度太大会导致方法栈溢出）。
  */
 public class Q06_PrintListInReversedOrder {
+
     public static void main(String[] args) {
         test1();
         test2();

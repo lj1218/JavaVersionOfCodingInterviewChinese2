@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03;
+package CodingInterviewChinese2.ch03.Q03_2_DuplicationInArrayNoEdit;
 
 /**
  * Created by lj1218.

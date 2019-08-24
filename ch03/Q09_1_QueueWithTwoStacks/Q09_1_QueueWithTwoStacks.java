@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q09_QueueWithTwoStacks;
+package CodingInterviewChinese2.ch03.Q09_1_QueueWithTwoStacks;
 
 import java.util.Stack;
 
@@ -10,7 +10,7 @@ import java.util.Stack;
  *   题目：用两个栈实现一个队列。队列的声明如下，请实现它的两个函数appendTail
  * 和deleteHead，分别完成在队列尾部插入结点和在队列头部删除结点的功能。
  */
-public class Q09_QueueWithTwoStacks {
+public class Q09_1_QueueWithTwoStacks {
 
     public static void main(String[] args) throws Exception {
         tests();

@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03;
+package CodingInterviewChinese2.ch03.Q05_ReplaceSpaces;
 
 /**
  * Created by lj1218.
