@@ -1,10 +1,11 @@
-package CodingInterviewChinese2.ch03.Q03_1_DuplicationInArray;
+package CodingInterviewChinese2.ch02.Q03_1_DuplicationInArray;
 
 import CodingInterviewChinese2.Util;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/21
+ *
  * Page: 39
  * 面试3 - 题目一：找出数组中重复的数字。
  *   在一个长度为 n 的数组里的所有数字都在 0~n-1 的范围内。数组中某些

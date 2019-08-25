@@ -1,10 +1,11 @@
-package CodingInterviewChinese2.ch03.Q09_1_QueueWithTwoStacks;
+package CodingInterviewChinese2.ch02.Q09_1_QueueWithTwoStacks;
 
 import java.util.Stack;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/24
+ *
  * Page: 68
  * 面试题9：用两个栈实现队列
  *   题目：用两个栈实现一个队列。队列的声明如下，请实现它的两个函数appendTail

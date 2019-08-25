@@ -1,8 +1,9 @@
-package CodingInterviewChinese2.ch03.Q10_Fibonacci;
+package CodingInterviewChinese2.ch02.Q10_Fibonacci;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/24
+ *
  * Page: 74
  * 面试题10：斐波那契数列
  *   题目：写一个函数，输入n，求斐波那契（Fibonacci）数列的第n项。

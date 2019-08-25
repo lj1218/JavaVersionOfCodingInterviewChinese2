@@ -1,8 +1,9 @@
-package CodingInterviewChinese2.ch03.Q11_MinNumberInRotatedArray;
+package CodingInterviewChinese2.ch02.Q11_MinNumberInRotatedArray;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/24
+ *
  * Page: 82
  * 面试题11：旋转数组的最小数字
  *   题目：把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。

@@ -1,10 +1,11 @@
-package CodingInterviewChinese2.ch03.Q07_ConstructBinaryTree;
+package CodingInterviewChinese2.ch02.Q07_ConstructBinaryTree;
 
 import java.util.Arrays;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/22
+ *
  * Page: 62
  * 面试题7：重建二叉树
  *   题目：输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输

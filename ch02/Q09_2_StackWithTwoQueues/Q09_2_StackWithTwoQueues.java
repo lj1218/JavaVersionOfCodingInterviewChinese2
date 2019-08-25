@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q09_2_StackWithTwoQueues;
+package CodingInterviewChinese2.ch02.Q09_2_StackWithTwoQueues;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
@@ -6,6 +6,7 @@ import java.util.Queue;
 /**
  * Created by lj1218.
  * Date: 2019/8/24
+ *
  * Page: 71
  * 面试题9-2：用两个队列实现一个栈。
  */

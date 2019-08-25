@@ -1,10 +1,11 @@
-package CodingInterviewChinese2.ch03.Q06_PrintListInReversedOrder;
+package CodingInterviewChinese2.ch02.Q06_PrintListInReversedOrder;
 
 import java.util.Stack;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/21
+ *
  * Page: 58
  * 面试题6：从尾到头打印链表
  *   题目：输入一个链表的头结点，从尾到头反过来打印出每个结点的值。

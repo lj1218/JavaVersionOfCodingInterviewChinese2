@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q15_NumberOf1InBinary;
+package CodingInterviewChinese2.ch02.Q15_NumberOf1InBinary;
 
 /**
  * Created by lj1218.

@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q12_StringPathInMatrix;
+package CodingInterviewChinese2.ch02.Q12_StringPathInMatrix;
 
 /**
  * Created by lj1218.

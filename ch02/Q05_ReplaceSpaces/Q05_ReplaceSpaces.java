@@ -1,8 +1,9 @@
-package CodingInterviewChinese2.ch03.Q05_ReplaceSpaces;
+package CodingInterviewChinese2.ch02.Q05_ReplaceSpaces;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/21
+ *
  * Page: 51
  * 面试题5：替换空格
  *   题目：请实现一个函数，把字符串中的每个空格替换成 "%20"。例如输入 “We are happy.”，

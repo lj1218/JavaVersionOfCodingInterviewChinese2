@@ -1,8 +1,9 @@
-package CodingInterviewChinese2.ch03.Q04_FindInPartiallySortedMatrix;
+package CodingInterviewChinese2.ch02.Q04_FindInPartiallySortedMatrix;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/21
+ *
  * Page: 44
  * 面试题4：二维数组中的查找
  *   题目：在一个二维数组中，每一行都按照从左到右递增的顺序排序，

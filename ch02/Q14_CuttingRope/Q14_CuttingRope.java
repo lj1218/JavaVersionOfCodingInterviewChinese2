@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q14_CuttingRope;
+package CodingInterviewChinese2.ch02.Q14_CuttingRope;
 
 /**
  * Created by lj1218.

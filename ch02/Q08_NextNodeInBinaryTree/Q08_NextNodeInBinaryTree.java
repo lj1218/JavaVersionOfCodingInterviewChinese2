@@ -1,8 +1,9 @@
-package CodingInterviewChinese2.ch03.Q08_NextNodeInBinaryTree;
+package CodingInterviewChinese2.ch02.Q08_NextNodeInBinaryTree;
 
 /**
  * Created by lj1218.
  * Date: 2019/8/23
+ *
  * Page: 65
  * 面试题8：二叉树的下一个结点
  *   题目：给定一棵二叉树和其中的一个结点，如何找出中序遍历顺序的下一个结点？

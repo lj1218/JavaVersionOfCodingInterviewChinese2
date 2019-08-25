@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q13_RobotMove;
+package CodingInterviewChinese2.ch02.Q13_RobotMove;
 
 /**
  * Created by lj1218.
