@@ -7,6 +7,9 @@ package CodingInterviewChinese2.ch03.Q18_01_DeleteNodeInList;
  * Page: 119
  * 面试题18（一）：在O(1)时间删除链表结点
  * 题目：给定单向链表的头指针和一个结点指针，定义一个函数在O(1)时间删除该结点。
+ *
+ * 提示：利用删除节点的下一个节点，将下一个节点拷贝到要删除的节点。
+ * 特别注意待删除节点在链表头、链表尾的情况。
  */
 public class Q18_01_DeleteNodeInList {
 
@@ -21,15 +24,15 @@ public class Q18_01_DeleteNodeInList {
     // ====================测试代码====================
     public static void Test(String testName, LinkedList<Integer> list, ListNode<Integer> nodeToBeDeleted) {
         System.out.println("\n------------- " + testName + " -------------");
-        System.out.println("The original list is:");
+        System.out.print("The original list is: ");
         System.out.println(list);
 
-        System.out.println("The node to be deleted is:");
+        System.out.print("The node to be deleted is: ");
         System.out.println(nodeToBeDeleted);
 
         list.deleteNode(nodeToBeDeleted);
 
-        System.out.println("The result list is:");
+        System.out.print("The result list is: ");
         System.out.println(list);
     }
 
@@ -121,6 +124,12 @@ class LinkedList<E> {
         // 要删除的节点不是尾节点
         if (nodeToBeDeleted.getNext() != null) {
             ListNode<E> next = nodeToBeDeleted.getNext();
+
+            if (next.getNext() == null) {
+                // 如果要删除节点的下一个节点为尾节点，那么将 tail 指向要删除的节点
+                tail = nodeToBeDeleted;
+            }
+
             nodeToBeDeleted.setValue(next.getValue());
             nodeToBeDeleted.setNext(next.getNext());
         } else if (head == nodeToBeDeleted) {
