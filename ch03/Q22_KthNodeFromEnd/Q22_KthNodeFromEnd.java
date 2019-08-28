@@ -34,18 +34,23 @@ class LinkedList<E> {
 
         ListNode<E> ahead = head;
         ListNode<E> behind = head;
+        // ahead 向前走 k-1 步
         for (int i = 0; i < k - 1; ++i) {
-            ahead = ahead.getNext();
-            if (ahead == null) {
+            if (ahead.getNext() == null) {
+                // 如果还没走完 k 步 ahead 指向了尾节点，说明 链表长度 < k
                 return null;
             }
+            ahead = ahead.getNext();
         }
 
+        // 将 ahead 指向尾节点
         while (ahead.getNext() != null) {
+            // ahead、behind 同步向前移动
             ahead = ahead.getNext();
             behind = behind.getNext();
         }
 
+        // ahead 指向尾节点，behind 指向倒数第 k 个节点
         return behind;
     }
 
