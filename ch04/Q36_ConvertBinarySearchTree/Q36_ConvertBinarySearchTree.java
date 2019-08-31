@@ -28,7 +28,7 @@ public class Q36_ConvertBinarySearchTree {
         return headOfList;
     }
 
-    // Java 不能传递没有指针的概念，因此只能将 lastNodeInList 作为参数传入，将更新后的 lastNodeInList 作为返回值返回。
+    // Java 没有指针的概念，因此只能将 lastNodeInList 作为参数传入，将更新后的 lastNodeInList 作为返回值返回。
     // 注释：这段递归代码理解起来不太直观。
     private static <E> BinaryTreeNode<E> convertNode(BinaryTreeNode<E> node, BinaryTreeNode<E> lastNodeInList) {
         if (node == null) {
