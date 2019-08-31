@@ -61,7 +61,7 @@ public class Q33_SequenceOfBST {
 
         boolean right = true;
         if (end - i > 1) {
-            // 左子树长度大于1，则递归
+            // 右子树长度大于1，则递归
             right = verifySequenceOfBSTCore(sequence, i, end - 1);
         }
 
