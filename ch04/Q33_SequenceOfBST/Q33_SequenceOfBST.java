@@ -35,7 +35,7 @@ public class Q33_SequenceOfBST {
 
         int root = sequence[end];
 
-        // 找出左子树序列
+        // 找出右子树序列起始下标（下标左边部分为左子树序列）
         int i = start;
         for (; i < end; ++i) {
             if (sequence[i] > root) {
