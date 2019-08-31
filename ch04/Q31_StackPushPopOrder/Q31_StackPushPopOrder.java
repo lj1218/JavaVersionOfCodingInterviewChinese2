@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q31_StackPushPopOrder;
+package CodingInterviewChinese2.ch04.Q31_StackPushPopOrder;
 
 import java.util.Stack;
 

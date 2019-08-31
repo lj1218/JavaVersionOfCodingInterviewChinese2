@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q28_SymmetricalBinaryTree;
+package CodingInterviewChinese2.ch04.Q28_SymmetricalBinaryTree;
 
 /**
  * Created by lj1218.

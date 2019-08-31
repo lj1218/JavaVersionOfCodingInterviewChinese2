@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q29_PrintMatrix;
+package CodingInterviewChinese2.ch04.Q29_PrintMatrix;
 
 /**
  * Created by lj1218.

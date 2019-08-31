@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q30_MinInStack;
+package CodingInterviewChinese2.ch04.Q30_MinInStack;
 
 import java.util.Stack;
 

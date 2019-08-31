@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q33_SequenceOfBST;
+package CodingInterviewChinese2.ch04.Q33_SequenceOfBST;
 
 /**
  * Created by lj1218.

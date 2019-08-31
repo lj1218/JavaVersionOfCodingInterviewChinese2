@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q32_01_PrintTreeFromTopToBottom;
+package CodingInterviewChinese2.ch04.Q32_01_PrintTreeFromTopToBottom;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

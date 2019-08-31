@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q27_MirrorOfBinaryTree;
+package CodingInterviewChinese2.ch04.Q27_MirrorOfBinaryTree;
 
 import java.util.Stack;
 
