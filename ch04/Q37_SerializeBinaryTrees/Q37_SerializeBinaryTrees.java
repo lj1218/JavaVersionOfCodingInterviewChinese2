@@ -152,6 +152,10 @@ class NumberReader {
 
     // 从 strArr 依次读取一个整数，非整数返回 null
     public Integer readOne() {
+        if (strArr == null) {
+            return null;
+        }
+
         Integer number = null;
         try {
             number = Integer.parseInt(strArr[index++]);
