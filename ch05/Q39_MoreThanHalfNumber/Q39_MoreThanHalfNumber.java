@@ -39,7 +39,7 @@ public class Q39_MoreThanHalfNumber {
         }
 
         if (!checkMoreThanHalf(numbers, result)) {
-            throw new Exception("no element occurs half times in array");
+            throw new Exception("no element occurs more than half times in array");
         }
         return result;
     }
