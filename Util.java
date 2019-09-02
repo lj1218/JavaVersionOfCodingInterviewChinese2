@@ -15,14 +15,14 @@ public class Util {
         a[j] = t;
     }
 
-    public static void swap(Integer[] a, int i, int j) {
-        int t = a[i];
+    public static void swap(char[] a, int i, int j) {
+        char t = a[i];
         a[i] = a[j];
         a[j] = t;
     }
 
-    public static void swap(char[] a, int i, int j) {
-        char t = a[i];
+    public static <T> void swap(T[] a, int i, int j) {
+        T t = a[i];
         a[i] = a[j];
         a[j] = t;
     }
