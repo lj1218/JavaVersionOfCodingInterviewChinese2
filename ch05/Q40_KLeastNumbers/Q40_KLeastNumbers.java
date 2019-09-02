@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * Created by lj1218.
  * Date: 2019/9/2
- * <p>
+ *
  * Page: 209
  * 面试题40：最小的k个数
  * 题目：输入n个整数，找出其中最小的k个数。例如输入4、5、1、6、2、7、3、8
@@ -21,13 +21,13 @@ public class Q40_KLeastNumbers {
     }
 
     // ====================方法1====================
-    // 不会修改输入数组（借助最大堆）
+    // 不会修改输入数组元素顺序（借助最大堆），时间复杂度 O(n)，适用于海量数据
     public static Integer[] getLeastNumbers_Solution1(Integer[] input, int k) throws Exception {
         if (input == null || input.length == 0 || k <= 0 || k > input.length) {
             throw new Exception("Invalid parameters");
         }
 
-        MaxHeap<Integer> maxHeap = new MaxHeap<>(Arrays.copyOf(input, k));
+        MaxHeap<Integer> maxHeap = new MaxHeap<>(Arrays.copyOf(input, k)); // 用 input 前 k 个元素建立大顶堆
         for (int i = k; i < input.length; ++i) {
             if (input[i] < maxHeap.getHeapElem()) {
                 maxHeap.replaceHeapElem(input[i]);
@@ -38,7 +38,7 @@ public class Q40_KLeastNumbers {
     }
 
     // ====================方法2====================
-    // 会修改输入数组（快排思想）
+    // 会修改输入数组元素顺序（快排思想），时间复杂度 O(nlogk)，不适用于海量数据
     public static Integer[] getLeastNumbers_Solution2(Integer[] input, int k) throws Exception {
         if (input == null || input.length == 0 || k <= 0 || k > input.length) {
             throw new Exception("Invalid parameters");
