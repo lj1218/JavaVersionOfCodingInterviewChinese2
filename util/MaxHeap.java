@@ -1,6 +1,6 @@
 package CodingInterviewChinese2.util;
 
-import java.util.Arrays;
+import CodingInterviewChinese2.Util;
 
 /**
  * Created by lj1218.
@@ -10,27 +10,18 @@ import java.util.Arrays;
  * <p>
  * 参考：啊哈！算法（第7章 神奇的树  第3节 堆--神奇的优先队列）
  */
-public class MaxHeap<E extends Comparable<E>> {
-    private final E[] data;
-    private final int length;
+public class MaxHeap<E extends Comparable<E>> extends AbstractHeap<E> {
 
-    public MaxHeap(E[] data) throws Exception {
-        if (data == null || data.length == 0) {
-            throw new Exception("data is null or empty");
-        }
-        this.data = Arrays.copyOf(data, data.length);
-        length = this.data.length;
-        construct();
+    public MaxHeap(Class<? extends E[]> type) {
+        super(type);
     }
 
-    /**
-     * 构建最大堆（从非叶结点从后往前，逐个结点向下调整直至根结点）
-     */
-    private void construct() {
-        for (int i = length / 2 - 1; i >= 0; --i) {
-            shiftDown(i);
-        }
-        validate();
+    public MaxHeap(int initialCapacity, Class<? extends E[]> type) {
+        super(initialCapacity, type);
+    }
+
+    public MaxHeap(E[] data) throws Exception {
+        super(data);
     }
 
     /**
@@ -38,12 +29,12 @@ public class MaxHeap<E extends Comparable<E>> {
      *
      * @param i 需要向下调整的节点编号
      */
-    private void shiftDown(int i) {
+    protected void shiftDown(int i) {
         int t; // 存储较大结点的下标（以便于 i 交换）
         int sonIndex = 2 * i + 1; // 左儿子
-        while (sonIndex < length) {
+        while (sonIndex < size) {
             // 首先判断它和左儿子的关系，并用 t 记录值较大的节点下标
-            if (data[i].compareTo(data[sonIndex]) < 0) {
+            if (elementData[i].compareTo(elementData[sonIndex]) < 0) {
                 t = sonIndex;
             } else {
                 t = i;
@@ -51,18 +42,16 @@ public class MaxHeap<E extends Comparable<E>> {
 
             // 如果它有右儿子，再对右儿子进行讨论
             sonIndex = sonIndex + 1; // 右儿子
-            if (sonIndex < length) {
+            if (sonIndex < size) {
                 // 如果右儿子的值更大，更新较大的结点下标
-                if (data[t].compareTo(data[sonIndex]) < 0) {
+                if (elementData[t].compareTo(elementData[sonIndex]) < 0) {
                     t = sonIndex;
                 }
             }
 
             // 如果发现较大的结点下标不是自己，说明子结点中有比父结点更大的
             if (t != i) {
-                E temp = data[t];
-                data[t] = data[i];
-                data[i] = temp;
+                Util.swap(elementData, i, t);
                 i = t; // 更新 i 为刚才与它交换的儿子结点的编号，便于接下来向下调整
             } else {
                 // 否则说明当前的父结点已经比两个子结点都要大了，不需要再进行调整了
@@ -74,44 +63,37 @@ public class MaxHeap<E extends Comparable<E>> {
     }
 
     /**
-     * 用 e 替换堆顶元素，并调整为最大堆
+     * 大元素向上调整
      *
-     * @param e 替换堆顶元素
+     * @param i 需要向上调整的节点编号
      */
-    public void replaceHeapElem(E e) {
-        data[0] = e;
-        shiftDown(0);
-        validate();
-    }
+    protected void shiftUp(int i) {
+        if (i == 0) {
+            return; // 堆顶元素不需要调整
+        }
 
-    /**
-     * 获取堆顶元素
-     *
-     * @return 堆顶元素
-     */
-    public E getHeapElem() {
-        return data[0];
-    }
-
-    /**
-     * 获取堆中所有元素
-     *
-     * @return 堆中所有元素组成的数组
-     */
-    public E[] getHeapElements() {
-        return Arrays.copyOf(data, data.length);
+        while (i != 0) {
+            int parentIndex = (i - 1) / 2;
+            // 判断是否比父结点的值大
+            if (elementData[i].compareTo(elementData[parentIndex]) > 0) {
+                Util.swap(elementData, i, parentIndex); // 和父结点交换
+            } else {
+                break;
+            }
+            i = parentIndex; // 更新编号 i 为它父结点的编号，从而便于下一次继续向上调整
+        }
     }
 
     /**
      * 校验是否为最大堆
      */
-    private void validate() {
-        for (int i = 0; i <= length / 2 - 1; ++i) {
-            if (data[i].compareTo(data[2 * i + 1]) < 0
-                    || (2 * i + 2 < length && data[i].compareTo(data[2 * i + 2]) < 0)) {
-                System.out.println("Invalid MaxHeap");
-                System.exit(1);
+    protected boolean validate() {
+        for (int i = 0; i <= size / 2 - 1; ++i) {
+            if (elementData[i].compareTo(elementData[2 * i + 1]) < 0
+                    || (2 * i + 2 < size && elementData[i].compareTo(elementData[2 * i + 2]) < 0)) {
+                return false;
             }
         }
+        return true;
     }
 }
