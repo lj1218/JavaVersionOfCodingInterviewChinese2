@@ -18,7 +18,7 @@ public class Q44_DigitsInSequence {
 
 }
 
-// class Solution1 逻辑更清晰
+// class Solution2 逻辑更清晰
 class Solution1 {
 
     /**
