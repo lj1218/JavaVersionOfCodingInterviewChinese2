@@ -18,6 +18,7 @@ public class Q60_DicesProbability {
     }
 
     // ====================方法一====================
+    // 方法一 代码实现不太好理解，参见 方法三
     public static void printProbability_Solution1(int number) {
         if (number < 1) {
             return;
@@ -88,6 +89,39 @@ public class Q60_DicesProbability {
             System.out.printf("%d: %e\n", i, ratio);
         }
     }
+
+    // ====================方法三====================
+    // 方法三 为 方法一 简化版，递归思路更好理解
+    public static void printProbability_Solution3(int number) {
+        if (number < 1) {
+            return;
+        }
+
+        int maxSum = number * MAX_VALUE;
+
+        // minSum = number * 1
+        // 总共有：maxSum - minSum + 1 种可能
+        int[] probabilities = new int[maxSum - number + 1];
+
+        probability2(number, number, 0, probabilities);
+
+        int total = (int) Math.pow(MAX_VALUE, number);
+        for (int i = number; i <= maxSum; ++i) {
+            double ratio = (double) probabilities[i - number] / total;
+            System.out.printf("%d: %e\n", i, ratio);
+        }
+    }
+
+    // original 为 minSum = number * 1 = number（数组起始下标为0）
+    private static void probability2(int original, int current, int sum, int[] probabilities) {
+        if (current == 0) {
+            probabilities[sum - original]++;
+        } else {
+            for (int i = 1; i <= MAX_VALUE; ++i) {
+                probability2(original, current - 1, i + sum, probabilities);
+            }
+        }
+    }
 }
 
 class Test {
@@ -110,6 +144,9 @@ class Test {
 
         System.out.println("Test for solution2");
         Q60_DicesProbability.printProbability_Solution2(n);
+
+        System.out.println("Test for solution3");
+        Q60_DicesProbability.printProbability_Solution3(n);
 
         System.out.println();
     }
