@@ -64,20 +64,27 @@ public class Q60_DicesProbability {
         int[][] probabilities = new int[2][MAX_VALUE * number + 1];
 
         int flag = 0;
+        // 只有1个骰子，每个点数出现次数为1
         for (int i = 1; i <= MAX_VALUE; ++i) {
             probabilities[flag][i] = 1;
         }
 
+        // 2个以上骰子（依次计算 2 ~ number 个骰子点数和出现的次数）
         for (int k = 2; k <= number; ++k) {
-            for (int i = 0; i < k; ++i) {
-                probabilities[1 - flag][i] = 0;
-            }
+//            // 对于 k 个骰子的和，肯定不会出现和小于 k 的情况，所以将和小于 k 出现的次数清零
+//            // 注意：因为下面的 for 循环中用 i - j >= k - 1 将 和小于 k 出现的次数排除在外，因此这里的清零操作也就多余了。
+//            for (int i = 0; i < k; ++i) {
+//                probabilities[1 - flag][i] = 0;
+//            }
 
+            // 依次计算 k 个骰子点数和出现的次数（范围：1*k ~ MAX_VALUE*k）
             for (int i = k; i <= MAX_VALUE * k; ++i) {
-                probabilities[1 - flag][i] = 0;
-                for (int j = 1; j <= i && j <= MAX_VALUE; ++j) {
-                    probabilities[1 - flag][i] += probabilities[flag][i - j];
+                int probability = 0;
+                for (int j = 1; j <= MAX_VALUE && i - j >= k - 1; ++j) {
+                    // i-j >= k-1 表示，前 k-1 个骰子点数之和 >= k-1，小于它的为无效值，需要排除掉。
+                    probability += probabilities[flag][i - j];
                 }
+                probabilities[1 - flag][i] = probability;
             }
 
             flag = 1 - flag;
@@ -98,27 +105,33 @@ public class Q60_DicesProbability {
         }
 
         int maxSum = number * MAX_VALUE;
+        int minSum = number; // minSum = number * 1
 
-        // minSum = number * 1
-        // 总共有：maxSum - minSum + 1 种可能
-        int[] probabilities = new int[maxSum - number + 1];
+        // 点数和总共有：maxSum - minSum + 1 种可能
+        int[] probabilities = new int[maxSum + 1]; // 此处浪费了 minSum 个 int 空间（下标 0 ~ minSum-1 没用到）
 
-        probability2(number, number, 0, probabilities);
+        probability2(number, 0, probabilities);
 
         int total = (int) Math.pow(MAX_VALUE, number);
-        for (int i = number; i <= maxSum; ++i) {
-            double ratio = (double) probabilities[i - number] / total;
+        for (int i = minSum; i <= maxSum; ++i) {
+            double ratio = (double) probabilities[i] / total;
             System.out.printf("%d: %e\n", i, ratio);
         }
     }
 
-    // original 为 minSum = number * 1 = number（数组起始下标为0）
-    private static void probability2(int original, int current, int sum, int[] probabilities) {
-        if (current == 0) {
-            probabilities[sum - original]++;
+    /**
+     * 计算 diceNumber 颗骰子点数总和出现的次数
+     *
+     * @param diceNumber    剩余骰子数
+     * @param sum           已累加的骰子点数总和（不包含剩余的 diceNumber 个骰子点数之和）
+     * @param probabilities 数组对应的下标为骰子点数总和，其值为点数总和出现的次数
+     */
+    private static void probability2(int diceNumber, int sum, int[] probabilities) {
+        if (diceNumber == 0) {
+            probabilities[sum]++;
         } else {
             for (int i = 1; i <= MAX_VALUE; ++i) {
-                probability2(original, current - 1, i + sum, probabilities);
+                probability2(diceNumber - 1, i + sum, probabilities);
             }
         }
     }
