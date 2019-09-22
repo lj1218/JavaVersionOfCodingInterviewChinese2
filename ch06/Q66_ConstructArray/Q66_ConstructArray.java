@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch06.Q66_ConstuctArray;
+package CodingInterviewChinese2.ch06.Q66_ConstructArray;
 
 /**
  * Created by lj1218.
@@ -12,7 +12,7 @@ package CodingInterviewChinese2.ch06.Q66_ConstuctArray;
  * 提示：分成 A[0]×A[1]×… ×A[i-1] 和 A[i+1]×…×A[n-1] 两部分分别累乘计，再分别相乘得到结果。
  *      时间复杂度 O(2*(n-1))
  */
-public class Q66_ConstuctArray {
+public class Q66_ConstructArray {
 
     public static void main(String[] args) {
         Test.main();
@@ -71,7 +71,7 @@ class Test {
     private static void test(String testName, double[] input, double[] expected) {
         System.out.printf("%s Begins: ", testName);
 
-        double[] output = Q66_ConstuctArray.buildProductionArray(input);
+        double[] output = Q66_ConstructArray.buildProductionArray(input);
         if (EqualArrays(output, expected)) {
             System.out.println("Passed.");
         } else {
