@@ -1,6 +1,6 @@
 package CodingInterviewChinese2.ch02.Q03_1_DuplicationInArray;
 
-import CodingInterviewChinese2.Util;
+import CodingInterviewChinese2.util.Common;
 
 /**
  * Created by lj1218.
@@ -49,7 +49,7 @@ public class Q03_1_DuplicationInArray {
                 if (m == numbers[m]) {
                     return m;
                 }
-                Util.swap(numbers, i, m);
+                Common.swap(numbers, i, m);
             }
         }
 

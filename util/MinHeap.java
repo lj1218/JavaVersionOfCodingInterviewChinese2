@@ -1,7 +1,5 @@
 package CodingInterviewChinese2.util;
 
-import CodingInterviewChinese2.Util;
-
 /**
  * Created by lj1218.
  * Date: 2019/9/2
@@ -51,7 +49,7 @@ public class MinHeap<E extends Comparable<E>> extends AbstractHeap<E> {
 
             // 如果发现较小的结点下标不是自己，说明子结点中有比父结点更小的
             if (t != i) {
-                Util.swap(elementData, i, t);
+                Common.swap(elementData, i, t);
                 i = t; // 更新 i 为刚才与它交换的儿子结点的编号，便于接下来向下调整
             } else {
                 // 否则说明当前的父结点已经比两个子结点都要小了，不需要再进行调整了
@@ -76,7 +74,7 @@ public class MinHeap<E extends Comparable<E>> extends AbstractHeap<E> {
             int parentIndex = (i - 1) / 2;
             // 判断是否比父结点的值小
             if (elementData[i].compareTo(elementData[parentIndex]) < 0) {
-                Util.swap(elementData, i, parentIndex); // 和父结点交换
+                Common.swap(elementData, i, parentIndex); // 和父结点交换
             } else {
                 break;
             }

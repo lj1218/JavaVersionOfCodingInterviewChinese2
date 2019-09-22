@@ -1,6 +1,6 @@
 package CodingInterviewChinese2.ch04.Q38_StringPermutation;
 
-import CodingInterviewChinese2.Util;
+import CodingInterviewChinese2.util.Common;
 
 /**
  * Created by lj1218.
@@ -34,11 +34,11 @@ public class Q38_StringPermutation {
             System.out.println();
         } else {
             for (int i = begin; i < str.length; ++i) {
-                Util.swap(str, i, begin);
+                Common.swap(str, i, begin);
 
                 permutation(str, begin + 1);
 
-                Util.swap(str, i, begin);
+                Common.swap(str, i, begin);
             }
         }
     }

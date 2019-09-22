@@ -1,6 +1,6 @@
 package CodingInterviewChinese2.ch05.Q40_KLeastNumbers;
 
-import CodingInterviewChinese2.Util;
+import CodingInterviewChinese2.util.Common;
 import CodingInterviewChinese2.util.MaxHeap;
 
 import java.util.Arrays;
@@ -46,14 +46,14 @@ public class Q40_KLeastNumbers {
 
         int start = 0;
         int end = input.length - 1;
-        int index = Util.partition(input, start, end);
+        int index = Common.partition(input, start, end);
         while (index != k - 1) {
             if (index > k - 1) {
                 end = index - 1;
             } else {
                 start = index + 1;
             }
-            index = Util.partition(input, start, end);
+            index = Common.partition(input, start, end);
         }
 
         return Arrays.copyOf(input, k);

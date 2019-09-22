@@ -1,6 +1,6 @@
 package CodingInterviewChinese2.ch04.Q38_2_EightQueens;
 
-import CodingInterviewChinese2.Util;
+import CodingInterviewChinese2.util.Common;
 
 import java.util.Arrays;
 
@@ -43,11 +43,11 @@ public class Q38_2_EightQueens {
             }
         } else {
             for (int i = begin; i < columnIndex.length; ++i) {
-                Util.swap(columnIndex, i, begin);
+                Common.swap(columnIndex, i, begin);
 
                 solutionNum = solution(columnIndex, begin + 1, solutionNum);
 
-                Util.swap(columnIndex, i, begin);
+                Common.swap(columnIndex, i, begin);
             }
         }
         return solutionNum;

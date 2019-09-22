@@ -1,4 +1,4 @@
-package CodingInterviewChinese2;
+package CodingInterviewChinese2.util;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ import java.util.Random;
  * Created by lj1218.
  * Date: 2019/8/21
  */
-public class Util {
+public class Common {
     private static Random random = new Random();
 
     public static void swap(int[] a, int i, int j) {

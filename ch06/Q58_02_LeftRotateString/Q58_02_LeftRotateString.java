@@ -1,6 +1,6 @@
 package CodingInterviewChinese2.ch06.Q58_02_LeftRotateString;
 
-import CodingInterviewChinese2.Util;
+import CodingInterviewChinese2.util.Common;
 
 /**
  * Created by lj1218.
@@ -40,7 +40,7 @@ public class Q58_02_LeftRotateString {
         }
 
         while (begin < end) {
-            Util.swap(s, begin++, end--);
+            Common.swap(s, begin++, end--);
         }
     }
 
