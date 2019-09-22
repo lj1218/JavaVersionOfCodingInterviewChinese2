@@ -1,4 +1,4 @@
-package CodingInterviewChinese2.ch03.Q19_RegularExpressonsMatching;
+package CodingInterviewChinese2.ch03.Q19_RegularExpressoinsMatching;
 
 /**
  * Created by lj1218.
@@ -11,7 +11,7 @@ package CodingInterviewChinese2.ch03.Q19_RegularExpressonsMatching;
  * 中，匹配是指字符串的所有字符匹配整个模式。例如，字符串"aaa"与模式"a.a"'
  * 和"ab*ac*a"匹配，但与"aa.a"及"ab*a"均不匹配。
  */
-public class Q19_RegularExpressonsMatching {
+public class Q19_RegularExpressionsMatching {
 
     public static void main(String[] args) {
         Test.main();
@@ -105,7 +105,7 @@ class Test {
             System.out.printf("%s begins: ", testName);
         }
 
-        if (Q19_RegularExpressonsMatching.match(
+        if (Q19_RegularExpressionsMatching.match(
                 string.toCharArray(), pattern.toCharArray()) == expected) {
             System.out.println("Passed.");
         } else {
