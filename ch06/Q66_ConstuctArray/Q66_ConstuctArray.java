@@ -75,7 +75,7 @@ class Test {
         if (EqualArrays(output, expected)) {
             System.out.println("Passed.");
         } else {
-            System.out.println("FAILED.\n");
+            System.out.println("FAILED.");
         }
     }
 
