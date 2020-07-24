@@ -111,19 +111,21 @@ class Test {
 
         List<Integer> result = Q59_01_MaxInSlidingWindow.maxInWindows(num, windowSize);
 
+        if (result.size() != expected.size()) {
+            System.out.println("FAILED.");
+            return;
+        }
+
         Iterator<Integer> itResult = result.iterator();
         Iterator<Integer> itExpected = expected.iterator();
         while (itResult.hasNext() && itExpected.hasNext()) {
             if (!itResult.next().equals(itExpected.next())) {
-                break;
+                System.out.println("FAILED.");
+                return;
             }
         }
 
-        if (!itResult.hasNext() && !itExpected.hasNext()) {
-            System.out.println("Passed.");
-        } else {
-            System.out.println("FAILED.");
-        }
+        System.out.println("Passed.");
     }
 
     private static void Test1() {
