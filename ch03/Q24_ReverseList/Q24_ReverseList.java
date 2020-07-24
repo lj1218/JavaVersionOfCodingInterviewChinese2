@@ -47,6 +47,49 @@ class LinkedList<E> {
         return head;
     }
 
+    public ListNode<E> reverseRecursively1() {
+        tail = reverseRecursively1Core(head);
+        if (tail != null) {
+            tail.setNext(null);
+        }
+        return head;
+    }
+
+    // 反转链表
+    private ListNode<E> reverseRecursively1Core(ListNode<E> node) {
+        if (node == null) {
+            return null;
+        }
+
+        ListNode<E> next = node.getNext();
+        if (next == null) {
+            head = node;
+        }
+
+        ListNode<E> t = reverseRecursively1Core(next);
+        if (t != null) {
+            t.setNext(node);
+        }
+        return node;
+    }
+
+    public ListNode<E> reverseRecursively2() {
+        tail = head;
+        head = reverseRecursively2Core(head);
+        return head;
+    }
+
+    private ListNode<E> reverseRecursively2Core(ListNode<E> hdr) {
+        if (hdr == null || hdr.getNext() == null) {
+            return hdr;
+        }
+
+        ListNode<E> newHead = reverseRecursively2Core(hdr.getNext());
+        hdr.getNext().setNext(hdr);
+        hdr.setNext(null);
+        return newHead;
+    }
+
     public boolean add(ListNode<E> node) {
         if (node == null) {
             return false;
@@ -125,6 +168,8 @@ class Test {
         System.out.println(list);
 
         ListNode<Integer> pReversedHead = list.reverse();
+//        ListNode<Integer> pReversedHead = list.reverseRecursively1();
+//        ListNode<Integer> pReversedHead = list.reverseRecursively2();
 
         System.out.println("The reversed list is:");
         System.out.println(list);
